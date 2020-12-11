@@ -13,8 +13,13 @@ excerpt: >
 
 Test
 
-##Architecture (C4)
+virker dette ikke det hele tatt
 
-### Context diagram
+Architecture (C4)
+
+Context diagram
 
 ![Context diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/metno/weamyl/master/architecture/context.puml)
+
+og hva skjer nå
+
