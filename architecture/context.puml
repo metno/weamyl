@@ -1,0 +1,26 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+ 
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include FONTAWESOME/users.puml
+ 
+LAYOUT_WITH_LEGEND()
+ 
+Person(user, Researcher , "Climate researcher - not working on developing ML models, just evaluating the results", "?")
+ 
+Person(user, SysAdmin, "tja", "?")
+ 
+Person(user, Forecaster, "tja", "?")
+ 
+System(WeaMyL,Software system,”The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations”)
+ 
+System(Thredds,Software system, “ Met Norway’s Data distribution service for Satellite data”,”EUMETSAT”)
+ 
+System(Thredds,Software system, “ Met Norway’s Data distribution service for Radar data”)
+ 
+System(National warning systems,Software system, “The forecasters’ forecast working desktop tool”)
+ 
+System(Training platform,Software system, “The platform for developing ML algorithms and facilities for training ”)
+ 
+ 
+@enduml
