@@ -6,13 +6,13 @@
  
 LAYOUT_WITH_LEGEND()
  
-Person(user_R, "Researcher" , "Climate researcher - not working on developing ML models, just evaluating the results", "?")
+Person(user_R, "Researcher" , "Climate researcher - not working on developing ML models, just evaluating the results", "User")
  
-Person(user_SA, "SysAdmin", "tja", "?")
+Person(user_SA, "SysAdmin", "tja", "User")
  
-Person(user_F, "Forecaster", "tja", "?")
+Person(user_F, "Forecaster", "Responsible for the daily forecast and to send out warning messages", "User")
  
-System(WeaMyL,"Software system","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
+System(WeaMyL,"WeaMyL","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
  
 System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
  
@@ -23,6 +23,12 @@ System_Ext(nws,"National warning  system", "The forecasters forecast working des
 System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
 
 Rel_R(user_F,nws,"Checking the severe weather warning proposal")
- 
+Rel_R(user_R,WeaMyL,"Getting interesting stuff from the Anotation atlas")
+Rel_L(user_R,Mltp,"Training the machinlearning algorithm")
+Rel_L(user_F,WeaMyL,"Editing threashold values")
+
+Rel_U(Thredds_rad,WeaMyL,"Getting radar data","NetCDF")
+Rel_U(Thredds_sat,WeaMyL,"Getting satellite data","NetCDF")
+Rel_L(nws,WeaMyL,"Suggest severe weather polygons and warning message")
  
 @enduml
