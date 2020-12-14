@@ -18,9 +18,9 @@ System(Thredds_rad,"Software system", "Met Norway's Data distribution service fo
  
 System(Thredds_sat,"Software system",  "Met Norway's Data distribution service for Radar data")
  
-System(National warning systems,"Software system", "The forecasters' forecast working desktop tool")
+System(nws,"National warning  system", "The forecasters forecast working desktop tool")
  
-System(Training platform,"Software system", "The platform for developing ML algorithms and facilities for training")
+System(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
  
  
 @enduml
