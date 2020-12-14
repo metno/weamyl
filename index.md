@@ -1,22 +1,13 @@
 ---
-title: "WeaMyL"
-
-permalink: /
-hidden: true
+title: "Context diagram"
 header:
-  overlay_color: "#5e616c"
-  caption: "some text"
-excerpt: >
-  Combining Machine Learning and Observations to Improve
-  Nowcasting 
+  overlay_color: "#5e616c" 
 ---
 
-Test
-
-Dette virker ganske bra
+The drawing below shows the Context diagram of WeaMyL drawn by the 9th of December
 
 
-#![Context diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/metno/weamyl/master/architecture/context.puml)
+![Context diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/annrii/weamyl/master/architecture/context.puml)
 
 
 
