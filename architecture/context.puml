@@ -21,6 +21,8 @@ System_Ext(Thredds_sat,"Thredds_NOR",  "Met Norway's Data distribution service f
 System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
  
 System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
+
+Rel_A(user_F,nws,"Checking the severe weather warning proposal")
  
  
 @enduml
