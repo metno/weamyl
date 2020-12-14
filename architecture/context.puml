@@ -12,15 +12,15 @@ Person(user_SA, "SysAdmin", "tja", "?")
  
 Person(user_F, "Forecaster", "tja", "?")
  
-System(WeaMyL,"Software system","WeaMyL","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
+System(WeaMyL,"Software system","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
  
-System(Thredds_rad,"Software system", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
+System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
  
-System(Thredds_sat,"Software system",  "Met Norway's Data distribution service for Radar data")
+System_Ext(Thredds_sat,"Thredds_NOR",  "Met Norway's Data distribution service for Radar data")
  
-System(nws,"National warning  system", "The forecasters forecast working desktop tool")
+System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
  
-System(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
+System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
  
  
 @enduml
