@@ -22,7 +22,7 @@ System_Ext(nws,"National warning  system", "The forecasters forecast working des
  
 System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
 
-Rel_A(user_F,nws,"Checking the severe weather warning proposal")
+Rel_R(user_F,nws,"Checking the severe weather warning proposal")
  
  
 @enduml
