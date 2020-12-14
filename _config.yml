@@ -37,15 +37,6 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # - architecture
 
 
-
-author:
-  name   : "No One"
-    bio    : "Nothing here."
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-
  
 defaults:
   # _posts

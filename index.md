@@ -1,4 +1,4 @@
----
+
 title: "WeaMyL"
 layout: splash
 permalink: /
@@ -9,7 +9,7 @@ header:
 excerpt: >
   Combining Machine Learning and Observations to Improve
   Nowcasting 
----
+
 
 Test
 
@@ -21,5 +21,5 @@ Context diagram
 
 ![Context diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/metno/weamyl/master/architecture/context.puml)
 
-og hva skjer nå
+og hva skjer 
 
