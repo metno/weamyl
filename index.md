@@ -1,6 +1,6 @@
 
 title: "WeaMyL"
-layout: splash
+
 permalink: /
 hidden: true
 header:
@@ -11,15 +11,9 @@ excerpt: >
   Nowcasting 
 
 
-Test
 
-virker dette ikke det hele tatt
-
-Architecture (C4)
-
-Context diagram
 
 ![Context diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/metno/weamyl/master/architecture/context.puml)
 
-og hva skjer 
+
 
