@@ -36,7 +36,12 @@ System_Boundary(WeaMyL, "WeaMyL"){
 'System_Ext(ANM_light,"Ligthning data Romania")
 'System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
 
-'Rel_Neighbor(Forecaster_Backend,GeoWeb,"MapLayers", "wms and text")
+Rel_Neighbor(Forecaster_Backend,GeoWeb,"MapLayers", "wms and text")
+Rel_Neighbor(ML_Motor,Forecaster_Backend,"Getting weather predictions","?")
+
+Rel_U(Data_Aq,ML_Motor,"getting input parameters","Format?")
+Rel_U(Atlas,GeoWeb,"Store metadata about severe weather")
+
 'Rel(user_F,GeoWeb,"Checking the severe weather warning proposal")
 'Rel_R(user_R,Atlas,"Getting interesting stuff from the Anotation atlas")
 'Rel_R(user_R,Mltp,"Training the machinlearning algorithm")
@@ -53,10 +58,7 @@ System_Boundary(WeaMyL, "WeaMyL"){
 'Rel_U(MetObs,Data_Aq,"Fetching regular observations, Rest API, formats? GeoJson")
 'Rel_U(AnmObs,Data_Aq,"Fetching regular observation, ??")
  
-'Rel_R(ML_Motor,Forecaster_Backend,"Getting weather predictions","?")
-
-'Rel_U(Data_Aq,ML_Motor,"getting input parameters","Format?")
-'Rel_U(Atlas,GeoWeb,"Store metadata about severe weather")
+'
 
  
 
