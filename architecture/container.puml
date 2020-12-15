@@ -14,10 +14,10 @@ Person(user_F, "Forecaster", "Responsible for the daily forecast and to send out
  
 'System(WeaMyL,"WeaMyL","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
  
-System_Boundary(c1,"WeaMyL"){
+
     Container(ML_Motor,"")
     Container(Data_Acq,"", "ECMWF SAPP Module?")
-    Container(Atlas,"Metadatacatalog API with reference to annotated meteorologigcal data","Semantic database")
+    ContainerDb(Atlas,"Metadatacatalog API with reference to annotated meteorologigcal data","Semantic database")
     Container(GeoWeb"Visualizing WeaMyL-output in maps","GeoWeb")
     Container(Forecaster_Backend,"Draw polygons from indicated areas from the MachineLearning output","?" )
     Rel(geoweb, Forecaster_Backend,"MapLayers", "wms and text")
@@ -26,7 +26,7 @@ System_Boundary(c1,"WeaMyL"){
     
 
 
-}
+
 
 System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
  
