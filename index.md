@@ -11,3 +11,6 @@ The drawing below shows the Context diagram of WeaMyL drawn by the 9th of Decemb
 
 
 
+![Container diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/annrii/weamyl/master/architecture/container.puml)
+
+
