@@ -23,6 +23,7 @@ System_Boundary(WeaMyL, "WeaMyL"){
    
     Rel_R(ML_Motor,Forecaster_Backend,"Getting weather predictions","?")
     Rel_U(Data_Aq,ML_Motor,"getting input parameters","Format?")
+    Rel_U(Atlas,GeoWeb,"Store metadata about severe weather")
 }
 
 System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
