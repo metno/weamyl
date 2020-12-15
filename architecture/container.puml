@@ -17,9 +17,9 @@ Person(user_F, "Operational Meteorologist", "Responsible for issuing severe weat
  
 System_Boundary(WeaMyL, "WeaMyL"){
     Container(ML_Motor,"Machine learning motor","?")
-    Container(Forecaster_Backend,"GeoWeb_DataService","Go","Draw polygons from indicated areas from the MachineLearning output" )
+    Container(Forecaster_Backend,"GeoWeb_DataService","C","Draw polygons from indicated areas from the MachineLearning output" )
     Container(GeoWeb,"GeoWeb","JavaScript,Angular","Visualizing WeaMyL-output in maps")
-    ContainerDb(Atlas,"Annotated Atlas","Semantic database","Metadatacatalog API with reference to annotated meteorologigcal data")
+    ContainerDb(Atlas,"Annotated Atlas","Semantic database,Go","Metadatacatalog API with reference to annotated meteorologigcal data")
     Container(Data_Aq,"Data acquisition", "ECMWF SAPP Module?","Collecting data from predefined sources")
     
 }
@@ -36,8 +36,8 @@ System_Boundary(WeaMyL, "WeaMyL"){
 'System_Ext(ANM_light,"Ligthning data Romania")
 'System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
 
-Rel_Neighbor(Forecaster_Backend,GeoWeb,"MapLayers", "wms and text")
-Rel_Neighbor(ML_Motor,Forecaster_Backend,"Getting weather predictions","?")
+Rel(Forecaster_Backend,GeoWeb,"MapLayers", "wms and text")
+Rel(ML_Motor,Forecaster_Backend,"Getting weather predictions","?")
 
 Rel_U(Data_Aq,ML_Motor,"getting input parameters","Format?")
 Rel_U(Atlas,GeoWeb,"Store metadata about severe weather")
