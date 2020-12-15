@@ -56,9 +56,9 @@ Rel_U(MetObs,Data_Aq,"Fetching regular observations, Rest API, formats? GeoJson"
 Rel_U(AnmObs,Data_Aq,"Fetching regular observation, ??")
 Rel_U(DS,Data_Aq,"Fetching radar and satelite, format??")
 'Rel_U(ANM_light,Data_Aq,"Fetching lighting observation, format??")
-Rel_U(MET_light,Data_Aq,"Fetching lighting observation, format??")
+'Rel_U(MET_light,Data_Aq,"Fetching lighting observation, format??")
  
-'Rel_U(Mltp,ML_Motor,"Deploying ML algorithm")
+Rel_U(Mltp,ML_Motor,"Deploying ML algorithm")
 
  
 
