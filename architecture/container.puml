@@ -19,9 +19,9 @@ System_Boundary(c1, "WeaMyL"){
     ContainerDb(Atlas,"Metadatacatalog API with reference to annotated meteorologigcal data","Semantic database")
     Container(GeoWeb"Visualizing WeaMyL-output in maps","GeoWeb")
     Container(Forecaster_Backend,"Draw polygons from indicated areas from the MachineLearning output","?" )
-    Rel(geoweb, Forecaster_Backend,"MapLayers", "wms and text")
-    Rel(Forecaster,Atlas)
-    Rel(Forecaster, GeoWeb)
+    Rel(GeoWeb, Forecaster_Backend,"MapLayers", "wms and text")
+    Rel(user_F,Atlas)
+    Rel(user_F, GeoWeb)
     
 
 }
