@@ -49,12 +49,10 @@ Rel_D(user_F,Forecaster_Backend,"Editing threashold values")
 Rel_D(user_SA,WeaMyL,"Maintain build and configs")
 
 Rel_U(Thredds,Data_Aq,"Getting radar and satellite data","NetCDF")
-
-
 Rel_R(GeoWeb,nws,"Send out warningmessage","Format?")
 
-Rel_U(ANM_light,Data_Aq,"Fetching lighting observation, format??")
-Rel_U(MET_light,Data_Aq,"Fetching lighting observation, format??")
+'Rel_U(ANM_light,Data_Aq,"Fetching lighting observation, format??")
+'Rel_U(MET_light,Data_Aq,"Fetching lighting observation, format??")
 Rel_U(MetObs,Data_Aq,"Fetching regular observations, Rest API, formats? GeoJson")
 Rel_U(AnmObs,Data_Aq,"Fetching regular observation, ??")
  
