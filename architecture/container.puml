@@ -24,17 +24,17 @@ System_Boundary(WeaMyL, "WeaMyL"){
     
 }
 
-'System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
+System_Ext(Thredds,"Thredds", "Met Norway's Data distribution service for Radar and Satellite data","EUMETSAT")
+System_Ext(DS,"Radar and satelite?", "ANM's Data distribution service for Radar and Satellite data","EUMETSAT")
+
  
-'System_Ext(Thredds_sat,"Thredds_NOR",  "Met Norway's Data distribution service for Radar data")
+System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
  
-'System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
- 
-'System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
-'System_Ext(MetObs,"Observations(Frost)", "Norwegian observations")
-'System_Ext(AnmObs,"Observations(ANM) ", "Romanian observation")
-'System_Ext(ANM_light,"Ligthning data Romania")
-'System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
+System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
+System_Ext(MetObs,"Observations(Frost)", "Norwegian observations")
+System_Ext(AnmObs,"Observations(ANM) ", "Romanian observation")
+System_Ext(ANM_light,"Ligthning data Romania")
+System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
 
 Rel_R(ML_Motor,Forecaster_Backend,"Getting weather predictions","?")
 Rel_R(Forecaster_Backend,GeoWeb,"MapLayers", "wms and text")
@@ -48,10 +48,10 @@ Rel_R(user_R,Mltp,"Training the machinlearning algorithm")
 Rel_D(user_F,Forecaster_Backend,"Editing threashold values")
 Rel_D(user_SA,WeaMyL,"Maintain build and configs")
 
-'Rel_U(Thredds_rad,Data_Aq,"Getting radar data","NetCDF")
-'Rel_U(Thredds_sat,Data_Aq,"Getting satellite data","NetCDF")
-'Rel_R(Forecaster_Backend,nws,"Suggest severe weather polygons and warning message")
-'Rel_R(GeoWeb,nws,"Send out warningmessage","Format?")
+Rel_U(Thredds,Data_Aq,"Getting radar and satellite data","NetCDF")
+
+
+Rel_R(GeoWeb,nws,"Send out warningmessage","Format?")
 'Rel_U(Mltp,ML_Motor,"Deploying ML algorithm")
 'Rel_U(ANM_light,Data_Aq,"Fetching lighting observation, format??")
 'Rel_U(MET_light,Data_Aq,"Fetching lighting observation, format??")
