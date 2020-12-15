@@ -29,10 +29,10 @@ System_Ext(AnmObs,"Observations(ANM) ", "Romanian observation")
 System_Ext(ANM_light,"Ligthning data Romania")
 System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
 
-Rel_R(user_F,WeaMyL,nws,"Checking the severe weather warning proposal")
+Rel(user_F,WeaMyL,nws,"Checking the severe weather warning proposal")
 Rel_R(user_R,WeaMyL,"Getting interesting stuff from the Anotation atlas")
 Rel_R(user_R,Mltp,"Training the machinlearning algorithm")
-Rel_R(user_F,WeaMyL,"Editing threashold values")
+Rel_D(user_F,WeaMyL,"Editing threashold values")
 Rel_R(user_SA,WeaMyL,"Unknown")
 
 Rel_U(Thredds_rad,WeaMyL,"Getting radar data","NetCDF")
