@@ -13,18 +13,16 @@ Person(user_F, "Operational Meteorologist", "Responsible for issuing severe weat
  
 'System(WeaMyL,"WeaMyL","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
  
-System_Boundary(c1, "WeaMyL"){
-    Container(ML_Motor,"")
+'System_Boundary(c1, "WeaMyL"){
+    Container(ML_Motor,"?","?")
     Container(Data_Acq,"", "ECMWF SAPP Module?")
     ContainerDb(Atlas,"Metadatacatalog API with reference to annotated meteorologigcal data","Semantic database")
-    Container(GeoWeb"Visualizing WeaMyL-output in maps","GeoWeb")
+    Container(GeoWeb,"Visualizing WeaMyL-output in maps","GeoWeb")
     Container(Forecaster_Backend,"Draw polygons from indicated areas from the MachineLearning output","?" )
     Rel(GeoWeb, Forecaster_Backend,"MapLayers", "wms and text")
-    Rel(user_F,Atlas)
-    Rel(user_F, GeoWeb)
-    
-
-}
+    Rel(user_F,Atlas,"?","?")
+    Rel(user_F, GeoWeb,"?","?")
+'}
 
 System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
  
