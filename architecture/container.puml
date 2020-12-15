@@ -4,6 +4,7 @@
 !define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
 !include FONTAWESOME/users.puml
  
+LAYOUT_TOP_DOWN()
 LAYOUT_WITH_LEGEND()
 Person(user_R, "Researcher" , "Studying severe weather episodes and data dissemination", "User")
  
@@ -19,7 +20,7 @@ System_Boundary(WeaMyL, "WeaMyL"){
     ContainerDb(Atlas,"Metadatacatalog API with reference to annotated meteorologigcal data","Semantic database")
     Container(GeoWeb,"Visualizing WeaMyL-output in maps","GeoWeb")
     Container(Forecaster_Backend,"Draw polygons from indicated areas from the MachineLearning output","?" )
-    
+
     Rel_R(ML_Motor,Forecaster_Backend,"Getting weather predictions","?")
     Rel_R(Forecaster_Backend,GeoWeb,"MapLayers", "wms and text")
     Rel_U(Data_Aq,ML_Motor,"getting input parameters","Format?")
