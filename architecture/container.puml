@@ -16,7 +16,7 @@ Person(user_F, "Operational Meteorologist", "Responsible for issuing severe weat
 'System(WeaMyL,"WeaMyL","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
  
 System_Boundary(WeaMyL, "WeaMyL"){
-    Container(ML_Motor,"Matchine learning motor","?")
+    Container(ML_Motor,"Machine learning motor","?")
     Container(Forecaster_Backend,"Draw polygons from indicated areas from the MachineLearning output","?" )
     Container(GeoWeb,"Visualizing WeaMyL-output in maps","GeoWeb")
     ContainerDb(Atlas,"Metadatacatalog API with reference to annotated meteorologigcal data","Semantic database")
@@ -24,24 +24,24 @@ System_Boundary(WeaMyL, "WeaMyL"){
     
 }
 
-System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
+'System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
  
-System_Ext(Thredds_sat,"Thredds_NOR",  "Met Norway's Data distribution service for Radar data")
+'System_Ext(Thredds_sat,"Thredds_NOR",  "Met Norway's Data distribution service for Radar data")
  
-System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
+'System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
  
-System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
-System_Ext(MetObs,"Observations(Frost)", "Norwegian observations")
-System_Ext(AnmObs,"Observations(ANM) ", "Romanian observation")
-System_Ext(ANM_light,"Ligthning data Romania")
-System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
+'System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
+'System_Ext(MetObs,"Observations(Frost)", "Norwegian observations")
+'System_Ext(AnmObs,"Observations(ANM) ", "Romanian observation")
+'System_Ext(ANM_light,"Ligthning data Romania")
+'System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
 
-Rel_Neighbor(Forecaster_Backend,GeoWeb,"MapLayers", "wms and text")
-Rel(user_F,GeoWeb,"Checking the severe weather warning proposal")
-Rel_R(user_R,Atlas,"Getting interesting stuff from the Anotation atlas")
-Rel_R(user_R,Mltp,"Training the machinlearning algorithm")
-Rel_D(user_F,Forecaster_Backend,"Editing threashold values")
-Rel_D(user_SA,WeaMyL,"Maintain build and configs")
+'Rel_Neighbor(Forecaster_Backend,GeoWeb,"MapLayers", "wms and text")
+'Rel(user_F,GeoWeb,"Checking the severe weather warning proposal")
+'Rel_R(user_R,Atlas,"Getting interesting stuff from the Anotation atlas")
+'Rel_R(user_R,Mltp,"Training the machinlearning algorithm")
+'Rel_D(user_F,Forecaster_Backend,"Editing threashold values")
+'Rel_D(user_SA,WeaMyL,"Maintain build and configs")
 
 'Rel_U(Thredds_rad,Data_Aq,"Getting radar data","NetCDF")
 'Rel_U(Thredds_sat,Data_Aq,"Getting satellite data","NetCDF")
