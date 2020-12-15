@@ -29,7 +29,7 @@ System_Ext(AnmObs,"Observations(ANM) ", "Romanian observation")
 System_Ext(ANM_light,"Ligthning data Romania")
 System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
 
-Rel(user_F,WeaMyL,nws,"Checking the severe weather warning proposal")
+Rel(user_F,nws,"Checking the severe weather warning proposal")
 Rel_R(user_R,WeaMyL,"Getting interesting stuff from the Anotation atlas")
 Rel_R(user_R,Mltp,"Training the machinlearning algorithm")
 Rel_D(user_F,WeaMyL,"Editing threashold values")
@@ -39,5 +39,8 @@ Rel_U(Thredds_rad,WeaMyL,"Getting radar data","NetCDF")
 Rel_U(Thredds_sat,WeaMyL,"Getting satellite data","NetCDF")
 Rel_L(WeaMyL,nws,"Suggest severe weather polygons and warning message")
 Rel_U(Mltp,WeaMyL,"Deploying ML algorithm")
+Rel_U(ANM_light,WeaMyL,"Fetching lighting observation, format??")
+Rel_U(MetObs,WeaMyL,"Fetching regular observations, Rest API, formats? GeoJson")
+Rel_U(AnmObs,WeaMyL,"Fetching regular observation, ??")
  
 @enduml
