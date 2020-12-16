@@ -1,16 +1,46 @@
-@startuml WeaMyL
-!include <C4/C4_Container>
-!include <office/Users/user.puml>
+@startuml "WeaMyL Context"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+'!include <C4/C4_Context.puml>
+ 
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include FONTAWESOME/users.puml
  
 LAYOUT_WITH_LEGEND()
  
-Person(Researcher , "<$user>\nClimate researcher - not working on developing ML models, just evaluating the results")
-Person(SysAdmin, "<$user>\ntja")
-Person(Forecaster, "<$user>\ntja")
+Person(user_R, "Researcher" , "Studying severe weather episodes and data dissemination", "User")
  
-System(WeaMyL, "The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
-System(Thredds, "Met Norway’s Data distribution service (Weather forecasts, EUMETSAT Satellites, Radar)")
-System(METWorkstation, "The forecasters’ forecast working desktop tool")
-System(TrainingPlatform, "The platform for developing ML algorithms and facilities for training ")
+Person(user_SA, "SysAdmin", "Responsible for the configuration and the maintenance runtime and build environment ", "User")
+ 
+Person(user_F, "Operational Meteorologist", "Responsible for issuing severe weather warning", "User")
+ 
+System(WeaMyL,"WeaMyL","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
+ 
+
+
+System_Ext(Thredds,"Thredds", "Met No's Data distribution service for Radar and Satellite data","EUMETSAT")
+System_Ext(DS,"Radar and satelite?", "ANM's Data distribution service for Radar and Satellite data","EUMETSAT") 
+ 
+System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
+ 
+System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
+System_Ext(MetObs,"Observations(Frost)", "Norwegian observations")
+System_Ext(AnmObs,"Observations(ANM) ", "Romanian observation")
+System_Ext(ANM_light,"Ligthning data Romania")
+System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
+
+Rel(user_F,nws,"Checking the severe weather warning proposal")
+Rel_R(user_R,WeaMyL,"Getting interesting stuff from the Anotation atlas")
+Rel_R(user_R,Mltp,"Training the machinlearning algorithm")
+Rel_D(user_F,WeaMyL,"Editing threashold values")
+Rel_D(user_SA,WeaMyL,"Unknown")
+
+Rel_U(Thredds,WeaMyL,"Getting radar and satellite data","NetCDF")
+Rel_U(DS,WeaMyL,"Getting radar and satellite data","NetCDF")
+Rel_R(WeaMyL,nws,"Suggest severe weather polygons and warning message")
+Rel_U(Mltp,WeaMyL,"Deploying ML algorithm")
+Rel_U(ANM_light,WeaMyL,"Fetching lighting observation, format??")
+Rel_U(MET_light,WeaMyL,"Fetching lighting observation, format??")
+Rel_U(MetObs,WeaMyL,"Fetching regular observations, Rest API, formats? GeoJson")
+Rel_U(AnmObs,WeaMyL,"Fetching regular observation, ??")
  
 @enduml
