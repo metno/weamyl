@@ -17,9 +17,8 @@ System(WeaMyL,"WeaMyL","The system will use Machine Learning algorithms to predi
  
 
 
-System_Ext(Thredds_rad,"Thredds_NOR", "Met Norway's Data distribution service for Satellite data","EUMETSAT")
- 
-System_Ext(Thredds_sat,"Thredds_NOR",  "Met Norway's Data distribution service for Radar data")
+System_Ext(Thredds,"Thredds", "Met No's Data distribution service for Radar and Satellite data","EUMETSAT")
+System_Ext(DS,"Radar and satelite?", "ANM's Data distribution service for Radar and Satellite data","EUMETSAT") 
  
 System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
  
@@ -35,8 +34,8 @@ Rel_R(user_R,Mltp,"Training the machinlearning algorithm")
 Rel_D(user_F,WeaMyL,"Editing threashold values")
 Rel_D(user_SA,WeaMyL,"Unknown")
 
-Rel_U(Thredds_rad,WeaMyL,"Getting radar data","NetCDF")
-Rel_U(Thredds_sat,WeaMyL,"Getting satellite data","NetCDF")
+Rel_U(Thredds,WeaMyL,"Getting radar and satellite data","NetCDF")
+Rel_U(DS,WeaMyL,"Getting radar and satellite data","NetCDF")
 Rel_R(WeaMyL,nws,"Suggest severe weather polygons and warning message")
 Rel_U(Mltp,WeaMyL,"Deploying ML algorithm")
 Rel_U(ANM_light,WeaMyL,"Fetching lighting observation, format??")
