@@ -1,69 +1,68 @@
 @startuml "WeaMyL Container"
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
- 
+
 !define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
 !include FONTAWESOME/users.puml
- 
+
 
 LAYOUT_WITH_LEGEND()
 
-Person(user_R, "Researcher" , "Studying severe weather episodes and data dissemination", "User")
- 
-Person(user_SA, "SysAdmin", "Responsible for the configuration and the maintenance runtime and build environment ", "User")
- 
-Person(user_F, "Operational Meteorologist", "Responsible for issuing severe weather warning", "User")
- 
+Person(user_R, "Researcher", "Studying severe weather episodes and data dissemination", "User")
+
+Person(user_SA, "SysAdmin", "Responsible for the configuration, the maintenance runtime and the build environment", "User")
+
+Person(user_F, "Operational Meteorologist", "Responsible for issuing severe weather warnings", "User")
+
 'System(WeaMyL,"WeaMyL","The system will use Machine Learning algorithms to predict severe weather conditions in near future(nowcast) from satellite and radar observations")
- 
+
 System_Boundary(WeaMyL, "WeaMyL"){
-    Container(ML_Motor,"Machine learning motor","?")
-    Container(Forecaster_Backend,"GeoWeb_DataService","C","Draw polygons from indicated areas from the MachineLearning output" )
-    Container(GeoWeb,"GeoWeb","JavaScript,Angular","Visualizing WeaMyL-output in maps")
-    ContainerDb(Atlas,"Annotated Atlas","Semantic database,Go","Metadatacatalog API with reference to annotated meteorologigcal data")
+    Container(ML_Motor,"Machine Learning motor","?")
+    Container(Forecaster_Backend,"GeoWeb_DataService","C","Draw polygons from indicated areas from the Machine Learning output" )
+    Container(GeoWeb,"GeoWeb","JavaScript, Angular","Visualizing WeaMyL output in maps")
+    ContainerDb(Atlas,"Annotated Atlas","Semantic database, Go","Metadata catalog API with reference to annotated meteorological data")
     Container(Data_Aq,"Data acquisition", "ECMWF SAPP Module?","Collecting data from predefined sources")
     user_R -[hidden]right- ML_Motor
     ML_Motor -[hidden]right- Forecaster_Backend
     Forecaster_Backend -[hidden]right- GeoWeb
     ML_Motor -[hidden]down- Atlas
-    Atlas -[hidden]right-  Data_Aq
+    Atlas -[hidden]right- Data_Aq
     GeoWeb -[hidden]down- Data_Aq
-
 }
 
-System_Ext(Thredds,"Thredds", "Met Norway's Data distribution service for Radar and Satellite data","EUMETSAT")
-System_Ext(DS,"Radar and satelite?", "ANM's Data distribution service for Radar and Satellite data","EUMETSAT")
+System_Ext(Thredds,"Thredds", "MET Norway's Data distribution service for Radar and Satellite data","EUMETSAT")
+System_Ext(DS,"Radar and satellite?", "ANM's Data distribution service for Radar and Satellite data","EUMETSAT")
 
- 
-System_Ext(nws,"National warning  system", "The forecasters forecast working desktop tool")
- 
-System_Ext(Mltp,"Training platform ", "The platform for developing ML algorithms and facilities for training")
-System_Ext(MetObs,"Observations(Frost)", "Norwegian observations")
-System_Ext(AnmObs,"Observations(ANM) ", "Romanian observation")
-System_Ext(ANM_light,"Ligthning data Romania")
-System_Ext(MET_light,"Ligthning data Norway","api.met.no?")
+
+System_Ext(nws,"National warning system", "The forecasters forecast working desktop tool")
+
+System_Ext(Mltp,"Training platform", "The platform for developing ML algorithms and facilities for training")
+System_Ext(MetObs,"Observations (Frost)", "Norwegian observations")
+System_Ext(AnmObs,"Observations (ANM)", "Romanian observations")
+System_Ext(ANM_light,"Lightning data Romania")
+System_Ext(MET_light,"Lightning data Norway","api.met.no?")
 
 Rel_R(ML_Motor,Forecaster_Backend,"Getting weather predictions","?")
 Rel_R(GeoWeb,Forecaster_Backend,"MapLayers", "wms and text")
 
-Rel_U(Data_Aq,ML_Motor,"getting input parameters","Format?")
+Rel_U(Data_Aq,ML_Motor,"Getting input parameters","Format?")
 Rel_U(Atlas,GeoWeb,"Store metadata about severe weather")
 
 Rel_D(user_F,GeoWeb,"Checking the severe weather warning proposal")
-Rel_L(user_R,Atlas,"Getting interesting stuff from the Anotation atlas")
-Rel_D(user_R,Mltp,"Training the machinlearning algorithm")
-Rel_D(user_F,Forecaster_Backend,"Editing threashold values")
+Rel_L(user_R,Atlas,"Getting interesting stuff from the Annotation Atlas")
+Rel_D(user_R,Mltp,"Training the Machine Learning algorithm")
+Rel_D(user_F,Forecaster_Backend,"Editing threshold values")
 Rel_D(user_SA,WeaMyL,"Maintain build and configs")
 
 Rel_U(Thredds,Data_Aq,"Getting radar and satellite data","NetCDF")
-Rel_R(nws,GeoWeb,"Send out warningmessage","Format?")
+Rel_R(nws,GeoWeb,"Send out warning message","Format?")
 
 
 Rel_U(MetObs,Data_Aq,"Fetching regular observations, Rest API, formats? GeoJson")
-Rel_U(AnmObs,Data_Aq,"Fetching regular observation, ??")
-Rel_U(DS,Data_Aq,"Fetching radar and satelite, format??")
+Rel_U(AnmObs,Data_Aq,"Fetching regular observations, ??")
+Rel_U(DS,Data_Aq,"Fetching radar and satellite, format??")
 Rel_U(ANM_light,Data_Aq,"Fetching lighting observation, format??")
 Rel_U(MET_light,Data_Aq,"Fetching lighting observation, format??")
- 
+
 Rel_U(Mltp,ML_Motor,"Deploying ML algorithm")
 
 @enduml
