@@ -1,6 +1,8 @@
 ---
 title: "C4 Container Diagram"
 permalink: /c4_container/
+classes: wide
+toc: false
 header:
   overlay_color: "#2d56c2" 
 ---

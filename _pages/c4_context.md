@@ -1,6 +1,8 @@
 ---
 title: "C4 Context Diagram"
 permalink: /c4_context/
+classes: wide
+toc: false
 header:
   overlay_color: "#2d56c2" 
 ---
