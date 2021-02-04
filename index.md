@@ -11,4 +11,4 @@ header:
 
 (Add project introcution)
 
-Read the documentation [here](/docs_main/).
+Read the documentation [here](docs_main/).

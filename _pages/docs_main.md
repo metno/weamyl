@@ -11,5 +11,5 @@ Introduction page to the documentation
 
 **C4 Diagrams**
 
-* [Context](/c4_context/)
-* [Container](/c4_container/)
+* [Context](../c4_context/)
+* [Container](../c4_container/)
