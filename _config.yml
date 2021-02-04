@@ -18,7 +18,8 @@ title: WeaMyL Documentation
 repository: "metno/weamyl"
 minimal_mistakes_skin: default
 logo: "assets/images/LogoMyLFinal-01.png"
-url: "https://metno.github.io/weamyl/"
+url: "https://metno.github.io"
+baseurl: "/weamyl"
 
 # Build settings
 markdown: kramdown
