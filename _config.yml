@@ -15,15 +15,13 @@
 # in the templates via {{ site.myvariable }}.
 title: WeaMyL Documentation
 
-# github_username: username
-# github_username: username
-repository: "metno/..."
+repository: "metno/weamyl"
 minimal_mistakes_skin: default
 logo: "assets/images/LogoMyLFinal-01.png"
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes@4.19.3
+remote_theme: mmistakes/minimal-mistakes@4.21.0
 
 # Outputting
 permalink: /:title/
@@ -32,7 +30,8 @@ paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
- - architecture
+  - _pages
+  - architecture
 
 # Plugins (previously gems:)
 plugins:
@@ -43,9 +42,18 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
- 
 defaults:
-  
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
   # _pages
   - scope:
       path: "_pages"
@@ -54,9 +62,10 @@ defaults:
       layout: single
       author_profile: false
       toc: true
+      toc_icon: bars
       toc_label: "Contents"
       header:
-        overlay_color: "#2073ac"
-      
-
-  
+        overlay_color: "#2d56c2"
+      sidebar:
+        - title: ""
+          nav: page_links

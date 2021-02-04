@@ -1,0 +1,23 @@
+main:
+  - title: "Docs"
+    url: /docs_main/
+  - title: "About"
+    url: /about/
+
+page_links:
+  - title: Introduction
+    children:
+    - title: Overview
+      url: /docs_main/
+    - title: About WeaMyL
+      url: /about/
+  - title: C4 Diagrams
+    children:
+    - title: Context
+      url: /c4_context/
+    - title: Container
+      url: /c4_container/
+  - title: External Links
+    children:
+    - title: MET Norway
+      url: https://met.no/

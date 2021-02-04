@@ -1,16 +1,14 @@
 ---
-title: "Context diagram"
+title: "WeaMyL Documentation"
+layout: splash
+permalink: /
+hidden: true
 header:
-  overlay_color: "#5e616c" 
+  overlay_color: "#2d56c2" 
 ---
 
-The drawing below shows the Context diagram of WeaMyL drawn by the 9th of December
+**Welcome to the WeaMyL Documentation Page**
 
+(Add project introcution)
 
-![Context diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/annrii/weamyl/master/architecture/context.puml)
-
-
-
-# ![Container diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/annrii/weamyl/master/architecture/container.puml)
-
-
+Read the documentation [here](/docs_main/).
